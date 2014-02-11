@@ -25,6 +25,9 @@ set title	" Show filename in title
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
+" always show statusline
+set laststatus=2
+
 "
 " vundle
 "
@@ -53,6 +56,7 @@ filetype off " required by vundle
 	Bundle "kien/ctrlp.vim"
 	" ctrl-r <tab>
 	Bundle "msanders/snipmate.vim" 
+	Bundle 'bling/vim-airline'
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
