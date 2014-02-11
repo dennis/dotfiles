@@ -2,9 +2,10 @@
 
 if [ ! -d "$HOME/.dotfiles" ]; then
 	git clone https://github.com/dennis/dotfiles.git "$HOME/.dotfiles"
-	cd "$HOME/.dotfiles"
-	mv -u .vimrc ~/
 else
-	echo "dotfiles is already installed"
+	cd "$HOME/.dotfiles"
+	git pull origin master
 fi
 
+cd "$HOME/.dotfiles"
+mv -u .vimrc ~/
