@@ -50,7 +50,7 @@ filetype off " required by vundle
 	Bundle "tpope/vim-rails"
 	Bundle "tpope/vim-bundler"
 	Bundle "tpope/vim-fugitive"
-    "...All your other bundles...
+	Bundle "kien/ctrlp.vim"
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
