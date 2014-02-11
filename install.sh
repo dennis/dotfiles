@@ -9,3 +9,5 @@ fi
 
 cd "$HOME/.dotfiles"
 mv -u .vimrc ~/
+mv -u .gitconfig ~/
+
