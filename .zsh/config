@@ -1,0 +1,53 @@
+export PAGER=less
+export EDITOR=vim
+export VISUAL=vim
+export PATH=$PATH:~/bin/:/var/lib/gems/1.8/bin/:~/java/jre1.5.0_04/bin/
+export LANG=en_US.utf8
+
+# Unbind c-s and c-q
+stty -ixon
+
+# Set titlebar
+echo "\033]2;zsh ~ `whoami`@`uname -n` \007\033]1";
+clear
+
+# prompt
+autoload colors   
+colors
+. ~/.zsh/termcolors
+
+# prompt git
+setopt prompt_subst
+autoload -Uz vcs_info
+vcs_info
+
+zstyle ':vcs_info:*' enable git cvs svn 
+zstyle ':vcs_info:*' formats '%b'
+zstyle ':vcs_info:git*:*' get-revision true
+zstyle ':vcs_info:git*:*' actionformats '%B%F{red}%a%f%%b %b'
+
+precmd() {       
+	psvar=()
+	vcs_info
+    [[ -n $vcs_info_msg_0_ ]] && psvar[1]="[${vcs_info_msg_0_} ]"
+}                          
+
+autoload -U colors
+colors
+setopt prompt_subst
+local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_color%})"
+
+
+#PS1="${BGBLUE}(%n@%m) %3c ${BGBLACK} %1v ${smiley} ➤ "
+PS1="${BGBLUE}(%n@%m) %3c ${BGBLACK} %1v ${smiley} "
+
+# Colours
+if test -x =dircolors; then
+	eval "`dircolors`"
+	export LS_COLORS="*.ogm=01;35:${LS_COLORS}"
+	export ZLS_COLORS=$LS_COLORS
+fi
+
+export GREP_OPTIONS='--color=auto'
+
+

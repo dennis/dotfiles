@@ -1,0 +1,9 @@
+# ssh completion
+autoload -U compinit && compinit
+if [[ -f ~/.ssh/config ]]; then
+	hostnames=(`cat ~/.ssh/config | grep -i "Host " | cut -d " " -f 2`)
+	zstyle ':completion:*:*:(ssh|scp|sftp|rsync):*:hosts' hosts $hostnames
+fi;
+
+# kill
+zstyle ':completion:*:kill:*:processes' command "ps x"

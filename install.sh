@@ -1,13 +1,16 @@
 #!/bin/bash
 
-if [ ! -d "$HOME/.dotfiles" ]; then
-	git clone https://github.com/dennis/dotfiles.git "$HOME/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
+
+if [ ! -d $DOTFILES ]; then
+	git clone https://github.com/dennis/dotfiles.git "$DOTFILES"
 else
-	cd "$HOME/.dotfiles"
+	cd $DOTFILES
 	git pull origin master
 fi
 
-cd "$HOME/.dotfiles"
-mv -u .vimrc ~/
-mv -u .gitconfig ~/
-
+cd $DOTFILES
+cp -p .vimrc ~/
+cp -p .gitconfig ~/
+cp -p .zsh ~/
+cp -p .zshrc ~/
