@@ -57,6 +57,7 @@ filetype off " required by vundle
 	" ctrl-r <tab>
 	Bundle "msanders/snipmate.vim" 
 	Bundle 'bling/vim-airline'
+	Bundle "tpope/vim-endwise"
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
