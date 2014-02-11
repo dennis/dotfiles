@@ -51,6 +51,8 @@ filetype off " required by vundle
 	Bundle "tpope/vim-bundler"
 	Bundle "tpope/vim-fugitive"
 	Bundle "kien/ctrlp.vim"
+	" ctrl-r <tab>
+	Bundle "msanders/snipmate.vim" 
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
