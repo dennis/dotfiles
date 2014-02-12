@@ -3,12 +3,23 @@ version 6.0
 syntax on
 set nocompatible
 set autoindent
-set sw=4
-set ts=4
+set copyindent
+set shiftwidth=4
+set tabstop=4
 set shiftround
+set smarttab
 set modeline
 set modelines=4
 set number
+set hidden 
+set hlsearch
+set incsearch
+
+set nobackup
+set noswapfile 
+
+set list
+set listchars=tab:▸\ ,eol:¬,trail:.
 
 nmap :W :w
 map  <f1>   <nop>
@@ -22,6 +33,7 @@ map! <f3> :FufBuffer<CR>
 
 set title	" Show filename in title
 
+nnoremap ; :
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
