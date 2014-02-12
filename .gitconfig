@@ -13,5 +13,8 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' 
 
+[user]
+	name = Dennis Møllegaard Pedersen
+
 [include]
 	path = ~/.gitconfig.local
