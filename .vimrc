@@ -6,6 +6,7 @@ set autoindent
 set copyindent
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 set shiftround
 set smarttab
 set modeline
@@ -78,3 +79,5 @@ filetype off " required by vundle
 " Setting up Vundle - the vim plugin bundler end
 
 filetype plugin indent on     " required by vundle
+
+autocmd FileType ruby setlocal et ts=2 sw=2 tw=0
