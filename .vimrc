@@ -32,7 +32,7 @@ map! <f2> :FufFile<CR>
 map <f3> :FufBuffer<CR>
 map! <f3> :FufBuffer<CR>
 
-set title	" Show filename in title
+set title   " Show filename in title
 
 nnoremap ; :
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
@@ -60,17 +60,17 @@ filetype off " required by vundle
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     Bundle 'gmarik/vundle'
-	Bundle 'L9'
-	Bundle 'FuzzyFinder'
-	Bundle "pangloss/vim-javascript"
-	Bundle "tpope/vim-rails"
-	Bundle "tpope/vim-bundler"
-	Bundle "tpope/vim-fugitive"
-	Bundle "kien/ctrlp.vim"
-	" ctrl-r <tab>
-	Bundle "msanders/snipmate.vim" 
-	Bundle 'bling/vim-airline'
-	Bundle "tpope/vim-endwise"
+    Bundle 'L9'
+    Bundle 'FuzzyFinder'
+    Bundle "pangloss/vim-javascript"
+    Bundle "tpope/vim-rails"
+    Bundle "tpope/vim-bundler"
+    Bundle "tpope/vim-fugitive"
+    Bundle "kien/ctrlp.vim"
+    " ctrl-r <tab>
+    Bundle "msanders/snipmate.vim" 
+    Bundle 'bling/vim-airline'
+    Bundle "tpope/vim-endwise"
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
@@ -80,4 +80,6 @@ filetype off " required by vundle
 
 filetype plugin indent on     " required by vundle
 
-autocmd FileType ruby setlocal et ts=2 sw=2 tw=0
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2 tw=0 et
+autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
+
