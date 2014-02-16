@@ -71,6 +71,8 @@ filetype off " required by vundle
     Bundle "msanders/snipmate.vim" 
     Bundle 'bling/vim-airline'
     Bundle "tpope/vim-endwise"
+    Bundle 'ngmy/vim-rubocop'
+    Bundle 'tpope/vim-haml'
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
@@ -79,7 +81,8 @@ filetype off " required by vundle
 " Setting up Vundle - the vim plugin bundler end
 
 filetype plugin indent on     " required by vundle
-
+autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
 
+let g:airline_powerline_fonts = 1
