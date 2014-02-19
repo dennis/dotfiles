@@ -1,6 +1,8 @@
 version 6.0
 
 syntax on
+set background=dark
+
 set nocompatible
 set autoindent
 set copyindent
@@ -15,6 +17,11 @@ set number
 set hidden 
 set hlsearch
 set incsearch
+set backspace=indent,eol,start
+
+set noerrorbells
+set visualbell
+set t_vb=
 
 set nobackup
 set noswapfile 
