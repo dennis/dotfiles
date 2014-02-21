@@ -81,6 +81,7 @@ filetype off " required by vundle
     Bundle 'ngmy/vim-rubocop'
     Bundle 'tpope/vim-haml'
     Bundle 'elzr/vim-json'
+    Bundle 'kshenoy/vim-signature'
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
