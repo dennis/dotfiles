@@ -27,7 +27,8 @@ set nobackup
 set noswapfile 
 
 set list
-set listchars=tab:▸\ ,eol:¬,trail:.
+"set listchars=tab:▸\ ,trail:.
+set listchars=tab:▸\ ,trail:·
 
 nmap :W :w
 map  <f1>   <nop>
