@@ -98,7 +98,7 @@ autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
 let g:airline_powerline_fonts = 1
 
 if has('gui_running')
-  set guioptions-=T  " no toolbar
+  set guioptions-=TmrL  " no (toolbar, menu, right and left scrollbar)
   colorscheme elflord
 endif
 
