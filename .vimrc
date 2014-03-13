@@ -26,6 +26,14 @@ set t_vb=
 set nobackup
 set noswapfile 
 
+set cursorline
+set showmatch
+
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+
 set list
 "set listchars=tab:▸\ ,trail:.
 set listchars=tab:▸\ ,trail:·
@@ -42,9 +50,12 @@ map! <f3> :FufBuffer<CR>
 
 set title   " Show filename in title
 
+let mapleader="," 
 nnoremap ; :
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <space> za
 
 " always show statusline
 set laststatus=2
@@ -101,4 +112,3 @@ if has('gui_running')
   set guioptions-=TmrL  " no (toolbar, menu, right and left scrollbar)
   colorscheme elflord
 endif
-
