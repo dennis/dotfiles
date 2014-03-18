@@ -26,7 +26,6 @@ set t_vb=
 set nobackup
 set noswapfile 
 
-set cursorline
 set showmatch
 
 set foldenable
