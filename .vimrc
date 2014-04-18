@@ -93,6 +93,11 @@ filetype off " required by vundle
     Bundle 'tpope/vim-haml'
     Bundle 'elzr/vim-json'
     Bundle 'kshenoy/vim-signature'
+
+    " Gist
+    Bundle 'mattn/webapi-vim'
+    Bundle 'mattn/gist-vim'
+
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
@@ -111,3 +116,10 @@ if has('gui_running')
   set guioptions-=TmrL  " no (toolbar, menu, right and left scrollbar)
   colorscheme elflord
 endif
+
+" Setup gist
+let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_show_privates = 1
+
