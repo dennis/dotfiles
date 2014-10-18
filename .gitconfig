@@ -2,6 +2,7 @@
 	diff = auto
 	status = auto
 	branch = auto
+	ui = auto
 [merge]
 	tool = vimdiff
 	#[push]
@@ -19,3 +20,6 @@
 
 [include]
 	path = ~/.gitconfig.local
+
+[core]
+	excludesfile = ~/.gitconfig.ignore
