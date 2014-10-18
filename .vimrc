@@ -94,6 +94,7 @@ filetype off " required by vundle
     Bundle 'elzr/vim-json'
     Bundle 'kshenoy/vim-signature'
     Bundle 'godlygeek/tabular'
+    Bundle 'slim-template/vim-slim'
 
     " Gist
     Bundle 'mattn/webapi-vim'
