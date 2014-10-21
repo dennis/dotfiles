@@ -14,6 +14,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	#lg = log --oneline --graph --color --all --decorate
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' 
+	oirebase=!git rebase -i origin/$(git rev-parse --abbrev-ref HEAD)
 
 [user]
 	name = Dennis Møllegaard Pedersen
