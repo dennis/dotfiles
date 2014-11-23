@@ -15,3 +15,6 @@ cp -p .gitconfig ~/
 [ -d ~/.zsh ] || mkdir ~/.zsh
 cp -p .zsh/* ~/.zsh/
 cp -p .zshrc ~/
+[ -d ~/.i3 ] || mkdir ~/.i3
+cp -p .i3/config ~/.i3/config
+
