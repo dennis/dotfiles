@@ -157,5 +157,8 @@ for_window [class="feh"]      move window to workspace 7
 workspace_auto_back_and_forth yes
 bindsym $mod+z workspace back_and_forth
 
+exec --no-startup-id gnome-sound-applet
+exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id xset dpms 600
 exec --no-startup-id feh --bg-scale /home/dennis/Pictures/background.jpg
+
