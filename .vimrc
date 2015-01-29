@@ -110,6 +110,7 @@ filetype off " required by vundle
 filetype plugin indent on     " required by vundle
 autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 tw=0 et
+autocmd FileType eruby setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
 
 let g:airline_powerline_fonts = 1
