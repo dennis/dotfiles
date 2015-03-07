@@ -40,7 +40,7 @@ local smiley="%(?,%{$fg[green]%}✓%{$reset_color%},%{$fg[red]%}✗%{$reset_colo
 
 #PS1="${BGBLUE}(%n@%m) %3c ${BGBLACK} %1v ${smiley} ➤ "
 PS1="${BGBLUE}(%n@%m) %3c ${BGBLACK} %1v ${smiley} "
-RPROMPT="%{%F{cyan}%}⚙ %j"
+RPROMPT="⚙ %j"
 
 # Colours
 if test -x =dircolors; then
