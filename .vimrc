@@ -112,6 +112,7 @@ autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType eruby setlocal ts=2 sts=2 sw=2 tw=0 et
 autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
+autocmd BufNewFile,BufRead *.slimbars set filetype=slim
 
 let g:airline_powerline_fonts = 1
 
