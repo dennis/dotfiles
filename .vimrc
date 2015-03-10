@@ -49,6 +49,9 @@ map! <f3> :FufBuffer<CR>
 
 set title   " Show filename in title
 
+set colorcolumn=80,120
+hi ColorColumn ctermbg=darkgrey guibg=lightgrey
+
 let mapleader="," 
 nnoremap ; :
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
