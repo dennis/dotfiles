@@ -24,3 +24,5 @@
 
 [core]
 	excludesfile = ~/.gitconfig.ignore
+[push]
+	default = simple
