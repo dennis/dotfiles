@@ -1,6 +1,8 @@
 version 6.0
 
 syntax on
+" Preferences {{{1
+
 set background=dark
 
 set nocompatible
@@ -29,14 +31,30 @@ set noswapfile
 set showmatch
 
 set foldenable
-set foldlevelstart=10
-set foldnestmax=10
+set foldlevelstart=0
+set foldnestmax=2
 set foldmethod=indent
 
 set list
 "set listchars=tab:▸\ ,trail:.
 set listchars=tab:▸\ ,trail:·
 
+set title   " Show filename in title
+
+set colorcolumn=80,120
+hi ColorColumn ctermbg=darkgrey guibg=lightgrey
+
+" always show statusline
+set laststatus=2
+
+
+" Mappings {{{1
+let mapleader="," 
+nnoremap ; :
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <space> za
 nmap :W :w
 map  <f1>   <nop>
 map! <f1>   <nop>
@@ -46,22 +64,10 @@ map <f2> :FufFile<CR>
 map! <f2> :FufFile<CR>
 map <f3> :FufBuffer<CR>
 map! <f3> :FufBuffer<CR>
+nnoremap <silent> <F3> :set list!<CR>
+nnoremap <silent> <F4> :nohlsearch<CR>
 
-set title   " Show filename in title
-
-set colorcolumn=80,120
-hi ColorColumn ctermbg=darkgrey guibg=lightgrey
-
-let mapleader="," 
-nnoremap ; :
-nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
-nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <space> za
-
-" always show statusline
-set laststatus=2
-
+" Plugins {{{1
 "
 " vundle
 "
@@ -110,12 +116,18 @@ filetype off " required by vundle
     endif
 " Setting up Vundle - the vim plugin bundler end
 
-filetype plugin indent on     " required by vundle
-autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0 et
-autocmd FileType ruby setlocal ts=2 sts=2 sw=2 tw=0 et
-autocmd FileType eruby setlocal ts=2 sts=2 sw=2 tw=0 et
-autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
-autocmd BufNewFile,BufRead *.slimbars set filetype=slim
+" Autocommands {{{1
+if has("autocmd")
+    filetype plugin indent on     " required by vundle
+
+    autocmd FileType vim setlocal foldmethod=marker et
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0 et
+    autocmd FileType ruby setlocal ts=2 sts=2 sw=2 tw=0 et
+    autocmd FileType eruby setlocal ts=2 sts=2 sw=2 tw=0 et
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
+    autocmd BufNewFile,BufRead *.slimbars set filetype=slim
+    autocmd FileType vim setlocal foldmethod=marker
+end
 
 let g:airline_powerline_fonts = 1
 
@@ -124,11 +136,16 @@ if has('gui_running')
   colorscheme elflord
 endif
 
-" Setup gist
+" Setup gist {{{1
 let g:gist_clip_command = 'xclip -selection clipboard'
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_show_privates = 1
 
-" ctrl-p
+" ctrl-p {{{1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|gems)$'
+
+" Fix colors for gnome-terminal {{{1
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif

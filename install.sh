@@ -11,6 +11,7 @@ fi
 
 cd $DOTFILES
 cp -p .vimrc ~/
+cp -p .gvimrc ~/
 cp -p .gitconfig ~/
 [ -d ~/.zsh ] || mkdir ~/.zsh
 cp -p .zsh/* ~/.zsh/
