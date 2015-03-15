@@ -47,6 +47,7 @@ hi ColorColumn ctermbg=darkgrey guibg=lightgrey
 " always show statusline
 set laststatus=2
 
+set pastetoggle=<F12>
 
 " Mappings {{{1
 let mapleader="," 
