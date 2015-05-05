@@ -41,8 +41,12 @@ set listchars=tab:▸\ ,trail:·
 
 set title   " Show filename in title
 
-set colorcolumn=80,120
-hi ColorColumn ctermbg=darkgrey guibg=lightgrey
+if exists('+colorcolumn')
+    let &colorcolumn="80,".join(range(120,256),",")
+    hi ColorColumn ctermbg=darkgrey guibg=lightgrey
+else
+    autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 " always show statusline
 set laststatus=2
