@@ -101,7 +101,8 @@ filetype off " required by vundle
     Bundle "kien/ctrlp.vim"
     " ctrl-r <tab>
     Bundle "msanders/snipmate.vim" 
-    Bundle 'bling/vim-airline'
+    " Bundle 'bling/vim-airline'
+    Bundle "maciakl/vim-neatstatus"
     Bundle "tpope/vim-endwise"
     Bundle 'ngmy/vim-rubocop'
     Bundle 'tpope/vim-haml'
@@ -141,6 +142,9 @@ if has('gui_running')
   set guioptions-=TmrL  " no (toolbar, menu, right and left scrollbar)
   colorscheme elflord
 endif
+
+" Setup neatstatus
+let g:NeatStatusLine_color_insert = 'guifg=#ffffff guibg=#ff0000 gui=bold" ctermfg=15 ctermbg=9 cterm=bold'
 
 " Setup gist {{{1
 let g:gist_clip_command = 'xclip -selection clipboard'
