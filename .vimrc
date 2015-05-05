@@ -109,6 +109,7 @@ filetype off " required by vundle
     Bundle 'kshenoy/vim-signature'
     Bundle 'godlygeek/tabular'
     Bundle 'slim-template/vim-slim'
+    Bundle 'rust-lang/rust.vim'
 
     " Gist
     Bundle 'mattn/webapi-vim'
