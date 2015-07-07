@@ -110,11 +110,12 @@ filetype off " required by vundle
     Bundle 'kshenoy/vim-signature'
     Bundle 'godlygeek/tabular'
     Bundle 'slim-template/vim-slim'
-    Bundle 'rust-lang/rust.vim'
 
     " Gist
     Bundle 'mattn/webapi-vim'
     Bundle 'mattn/gist-vim'
+    Bundle 'rust-lang/rust.vim'
+    Bundle 'mustache/vim-mustache-handlebars'
 
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
@@ -133,6 +134,10 @@ if has("autocmd")
     autocmd FileType eruby setlocal ts=2 sts=2 sw=2 tw=0 et
     autocmd FileType make setlocal ts=8 sts=8 sw=8 tw=8 noet
     autocmd BufNewFile,BufRead *.slimbars set filetype=slim
+    autocmd BufNewFile,BufRead *.js set ts=2 sw=2 et
+    autocmd BufNewFile,BufRead *.json set ts=2 sw=2 et
+    autocmd BufNewFile,BufRead *.hbs set ts=2 sw=2 et
+    autocmd BufNewFile,BufRead *.css set ts=2 sw=2 et
     autocmd FileType vim setlocal foldmethod=marker
 end
 
