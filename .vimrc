@@ -52,6 +52,7 @@ vnoremap <Home> <nop>
 vnoremap <End> <nop>
 
 nnoremap ; :
+map Y y$
 
 " easier window navigation
 map <C-h> <C-w> h
