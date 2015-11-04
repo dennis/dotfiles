@@ -19,12 +19,15 @@ set synmaxcol=200
 set ttyfast
 set ttyscroll=3
 set lazyredraw
+set bg=dark
+set t_Co=256
 
 set complete=.,w,b,u,t,i,kspell
 
 set spelllang=en_us " ]S + z=
 
 filetype plugin indent on
+
 
 " Key mappings {{{1
 
@@ -99,11 +102,6 @@ if has("autocmd")
   endfunction
 end
 
-" Fix colors for gnome-terminal {{{1
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-
 " Vundle {{{1
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -120,7 +118,9 @@ Plugin 'slim-template/vim-slim'
 Plugin 'gaogao1030/vim-slimbars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'robertmeta/nofrils'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+colorscheme nofrils
