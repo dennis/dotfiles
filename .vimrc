@@ -28,6 +28,7 @@ set spelllang=en_us " ]S + z=
 
 filetype plugin indent on
 
+let loaded_matchparen = 1 " Do not highlight matching parens
 
 " Key mappings {{{1
 
@@ -80,7 +81,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.slimbars set ft=slim
   autocmd BufNewFile,BufRead *.hbs set ft=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
   autocmd BufRead,BufNewFile *.scss,*.scss.erb set filetype=scss.css
-  autocmd BufNewFile,BufRead *.ino set ft=cpp
 
   " Large files: http://vim.wikia.com/wiki/Open_big_files_and_work_fast
   let g:LargeFile = 1024 * 1024 * 10
