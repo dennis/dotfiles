@@ -19,7 +19,6 @@ set synmaxcol=200
 set ttyfast
 set ttyscroll=3
 set lazyredraw
-set bg=dark
 set t_Co=256
 
 set complete=.,w,b,u,t,i,kspell
@@ -123,4 +122,4 @@ Plugin 'robertmeta/nofrils'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme nofrils
+colorscheme nofrils-dark
