@@ -54,6 +54,10 @@ vnoremap <PageDown> <nop>
 vnoremap <Home> <nop>
 vnoremap <End> <nop>
 
+" Use python/perl like regex
+nnoremap / /\v
+vnoremap / /\v
+
 nnoremap ; :
 map Y y$
 
