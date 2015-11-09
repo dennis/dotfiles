@@ -122,6 +122,7 @@ Plugin 'gaogao1030/vim-slimbars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'robertmeta/nofrils'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
