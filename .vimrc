@@ -20,6 +20,7 @@ set ttyfast
 set ttyscroll=3
 set lazyredraw
 set t_Co=256
+set hlsearch
 
 set complete=.,w,b,u,t,i,kspell
 
