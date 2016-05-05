@@ -1,4 +1,4 @@
-version 6.0
+version 8.0
 
 set number
 set nobackup
@@ -59,8 +59,12 @@ vnoremap <End> <nop>
 nnoremap / /\v
 vnoremap / /\v
 
-nnoremap ; :
+"nnoremap ; :
 map Y y$
+
+nnoremap gb :ls<CR>:buffer<Space>
+nnoremap gS :ls<CR>:sbuffer<Space>
+noremap - $
 
 " easier window navigation
 map <C-h> <C-w> h
@@ -125,6 +129,9 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'robertmeta/nofrils'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-projectionist'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
