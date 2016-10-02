@@ -132,6 +132,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-fugitive'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
