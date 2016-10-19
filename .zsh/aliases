@@ -1,8 +1,14 @@
 alias xdk="setxkbmap -layout dk"
 alias xus="setxkbmap -layout us"
-alias ls="ls --color"
 alias mysqlr="mysql -u root"
 alias ..="cd .."
 alias ....="cd ../.."
 alias ......="cd ../../.."
 alias be="bundle exec"
+
+if [ $(uname) = "Darwin" ]; then
+  alias ls="ls -G"
+else
+  alias ls="ls --color"
+fi
+
