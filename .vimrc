@@ -30,6 +30,11 @@ filetype plugin indent on
 
 let loaded_matchparen = 1 " Do not highlight matching parens
 
+" netrw
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4 " open in previous window
+let g:netrw_winsize = 50
+
 " Key mappings {{{1
 
 " hopefully I'll learn use VIM properly
@@ -132,8 +137,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-fugitive'
-Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
