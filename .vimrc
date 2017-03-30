@@ -21,6 +21,8 @@ set ttyscroll=3
 set lazyredraw
 set t_Co=256
 set hlsearch
+set wildmenu
+set showmatch
 
 set complete=.,w,b,u,t,i,kspell
 
@@ -34,6 +36,16 @@ let loaded_matchparen = 1 " Do not highlight matching parens
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4 " open in previous window
 let g:netrw_winsize = 50
+
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
 
 " Key mappings {{{1
 
@@ -80,6 +92,9 @@ map <C-l> <C-w> l
 " easier buffer navigation
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
 cmap w!! w !sudo tee % >/dev/null
 
