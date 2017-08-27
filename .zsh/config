@@ -4,6 +4,17 @@ export VISUAL=vim
 export PATH=$PATH:~/bin/:/var/lib/gems/1.8/bin/:~/java/jre1.5.0_04/bin/
 export LANG=en_US.utf8
 
+# vim setup - source http://dougblack.io/words/zsh-vi-mode.html
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+export KEYTIMEOUT=1
+
+
 # Unbind c-s and c-q
 stty -ixon
 
@@ -12,7 +23,7 @@ echo "\033]2;zsh ~ `whoami`@`uname -n` \007\033]1";
 clear
 
 # prompt
-autoload colors   
+autoload colors
 colors
 . ~/.zsh/termcolors
 
@@ -21,16 +32,16 @@ setopt prompt_subst
 autoload -Uz vcs_info
 vcs_info
 
-zstyle ':vcs_info:*' enable git cvs svn 
+zstyle ':vcs_info:*' enable git cvs svn
 zstyle ':vcs_info:*' formats '%b'
 zstyle ':vcs_info:git*:*' get-revision true
 zstyle ':vcs_info:git*:*' actionformats '%B%F{red}%a%f%%b %b'
 
-precmd() {       
-	psvar=()
-	vcs_info
+precmd() {
+  psvar=()
+  vcs_info
     [[ -n $vcs_info_msg_0_ ]] && psvar[1]="[${vcs_info_msg_0_} ]"
-}                          
+}
 
 autoload -U colors
 colors
@@ -44,9 +55,9 @@ RPROMPT="⚙ %j"
 
 # Colours
 if test -x =dircolors; then
-	eval "`dircolors`"
-	export LS_COLORS="*.ogm=01;35:${LS_COLORS}"
-	export ZLS_COLORS=$LS_COLORS
+  eval "`dircolors`"
+  export LS_COLORS="*.ogm=01;35:${LS_COLORS}"
+  export ZLS_COLORS=$LS_COLORS
 fi
 
 export GREP_OPTIONS='--color=auto'
