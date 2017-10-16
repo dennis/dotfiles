@@ -84,10 +84,11 @@ nnoremap gS :ls<CR>:sbuffer<Space>
 noremap - $
 
 " easier window navigation
-map <C-h> <C-w> h
-map <C-j> <C-w> j
-map <C-k> <C-w> k
-map <C-l> <C-w> l
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 
 " easier buffer navigation
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
@@ -152,7 +153,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
-Plugin 'rizzatti/dash.vim'
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
