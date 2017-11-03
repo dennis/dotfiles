@@ -23,6 +23,7 @@ set t_Co=256
 set hlsearch
 set wildmenu
 set showmatch
+set colorcolumn=80
 
 set complete=.,w,b,u,t,i,kspell
 
@@ -154,6 +155,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
