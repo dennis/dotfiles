@@ -160,6 +160,12 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf.vim'
+Plugin 'mileszs/ack.vim'
+
+" Ag setup for ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 call vundle#end()            " required
 filetype plugin indent on    " required
