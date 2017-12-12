@@ -29,6 +29,8 @@ set complete=.,w,b,u,t,i,kspell
 
 set spelllang=en_us " ]S + z=
 
+set rtp+=~/.fzf
+
 filetype plugin indent on
 
 let loaded_matchparen = 1 " Do not highlight matching parens
@@ -80,9 +82,8 @@ vnoremap / /\v
 "nnoremap ; :
 map Y y$
 
-nnoremap gb :ls<CR>:buffer<Space>
-nnoremap gS :ls<CR>:sbuffer<Space>
-noremap - $
+nmap <leader>l :setlocal number!<CR>:setlocal relativenumber!<CR>
+nmap <leader>o :set paste!<CR>
 
 " easier window navigation
 nnoremap <C-J> <C-W><C-J>
@@ -158,6 +159,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
