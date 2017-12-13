@@ -5,16 +5,12 @@
 	ui = auto
 [merge]
 	tool = vimdiff
-	#[push]
-#	default = simple
 [alias]
 	st = status -sb
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	#lg = log --oneline --graph --color --all --decorate
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' 
-	oirebase=!git rebase -i origin/$(git rev-parse --abbrev-ref HEAD)
 
 [user]
 	name = Dennis Møllegaard Pedersen
@@ -25,6 +21,6 @@
 [core]
 	excludesfile = ~/.gitconfig.ignore
 [push]
-	default = simple
+	default = current # allows : git push -u  w/o explicit origin
 [gui]
 	gcwarning = false
