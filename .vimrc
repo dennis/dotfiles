@@ -30,6 +30,7 @@ set complete=.,w,b,u,t,i,kspell
 set spelllang=en_us " ]S + z=
 
 set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 
 filetype plugin indent on
 
@@ -84,6 +85,9 @@ map Y y$
 
 nmap <leader>l :setlocal number!<CR>:setlocal relativenumber!<CR>
 nmap <leader>o :set paste!<CR>
+nmap <leader>f :Files<CR>
+nmap <leader>b :Buffers<CR>
+
 
 " easier window navigation
 nnoremap <C-J> <C-W><C-J>
@@ -152,7 +156,6 @@ Plugin 'gaogao1030/vim-slimbars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'robertmeta/nofrils'
-Plugin 'kien/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
