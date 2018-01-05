@@ -4,7 +4,7 @@ set number
 set nobackup
 set noswapfile
 set list
-set listchars=tab:▸\ ,trail:·,
+" set listchars=tab:▸\ ,trail:·,
 set ttyfast
 set hidden
 set nowrap
