@@ -87,6 +87,7 @@ nmap <leader>l :setlocal number!<CR>:setlocal relativenumber!<CR>
 nmap <leader>o :set paste!<CR>
 nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
+nmap <leader>r i# frozen_string_literal: true<CR>
 
 
 " easier window navigation
