@@ -1,8 +1,13 @@
-. ~/.zsh/config
-. ~/.zsh/aliases
-. ~/.zsh/completion
-. ~/.zsh/rbenv
-. ~/.zsh/jump
+alias xdk="setxkbmap -layout dk"
+alias xus="setxkbmap -layout us"
+alias mysqlr="mysql -u root"
+alias be="bundle exec"
 
-[[ -f ~/.zsh/local ]] && . ~/.zsh/local
+export EDITOR=vim
+export VISUAL=vim
 
+# rbenv
+export PATH="$PATH:$HOME/.rbenv/bin"
+eval "$(rbenv init -)"
+
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" to
