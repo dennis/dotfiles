@@ -3,7 +3,7 @@ version 8.0
 set number
 set nobackup
 set noswapfile
-set list
+" set list
 " set listchars=tab:▸\ ,trail:·,
 set ttyfast
 set hidden
@@ -145,19 +145,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-markdown'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-markdown'
 Plugin 'msanders/snipmate.vim'
-Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tmhedberg/matchit'
 Plugin 'sickill/vim-pasta'
-Plugin 'slim-template/vim-slim'
-Plugin 'gaogao1030/vim-slimbars'
-Plugin 'pangloss/vim-javascript'
-Plugin 'cakebaker/scss-syntax.vim'
+" Plugin 'slim-template/vim-slim'
+" Plugin 'gaogao1030/vim-slimbars'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'robertmeta/nofrils'
-Plugin 'rust-lang/rust.vim'
+" Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
@@ -165,6 +165,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-endwise'
 
 " Ag setup for ack
 if executable('ag')
