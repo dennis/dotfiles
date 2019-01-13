@@ -88,6 +88,7 @@ nmap <leader>o :set paste!<CR>
 nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>r i# frozen_string_literal: true<CR>
+nmap <leader>p irequire "pry"; binding.pry<CR>
 
 
 " easier window navigation
@@ -117,6 +118,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.slimbars set ft=slim
   autocmd BufNewFile,BufRead *.hbs set ft=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
   autocmd BufRead,BufNewFile *.scss,*.scss.erb set filetype=scss.css
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
   " Auto resize splits, if vim is resized
   autocmd VimResized * wincmd =
 
@@ -165,8 +167,10 @@ Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot' " Syntax files
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-eunuch'
+Plugin 'romainl/vim-cool' " Turn off hlsearch when 'done'
 
 " Ag setup for ack
 if executable('ag')
@@ -176,4 +180,9 @@ endif
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" setup for vim-cool
+let g:CoolTotalMatches = 1
+
 colorscheme nofrils-dark
+
+
