@@ -17,7 +17,6 @@ set ts=2 sts=2 sw=2 tw=0
 set showcmd
 set synmaxcol=200
 set ttyfast
-set ttyscroll=3
 set lazyredraw
 set t_Co=256
 set hlsearch

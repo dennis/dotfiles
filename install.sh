@@ -16,4 +16,4 @@ cp -p .gitconfig ~/
 cp -p .zshrc ~/
 [ -d ~/.i3 ] || mkdir ~/.i3
 cp -p .i3/config ~/.i3/config
-
+ln -fs ~/.vimrc ~/.config/nvim/init.vim
