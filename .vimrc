@@ -85,21 +85,28 @@ vnoremap / /\v
 "nnoremap ; :
 map Y y$
 
-nmap <leader>l :setlocal number!<CR>:setlocal relativenumber!<CR>
-nmap <leader>o :set paste!<CR>
-nmap <leader>f :Files<CR>
-nmap <leader>b :Buffers<CR>
-nmap <leader>rf i# frozen_string_literal: true<CR>
-nmap <leader>rp irequire "pry"; binding.pry<CR>
-nmap <leader>vh :HardTimeToggle<Cr>
-
+map <leader>l :setlocal number!<CR>:setlocal relativenumber!<CR>
+map <leader>o :set paste!<CR>
+map <leader>f :Files<CR>
+map <leader>b :Buffers<CR>
+map <leader>rf i# frozen_string_literal: true<CR>
+map <leader>rp irequire "pry"; binding.pry<CR>
+map <leader>rs! :call RunLastFailure()<CR>
+map <leader>rs$ :call RunLastSpec()<CR>
+map <leader>rs. :call RunCurrentSpecFile()<CR>
+map <leader>rs<space> call RunNearestSpec()<CR>
+map <leader>rse :call VsplitSpec()<CR>
+map <leader>vh :HardTimeToggle<Cr>
+map <leader>ea=      :Align =<CR>
+map <leader>ea>      :Align =><CR>
+map <leader>ea{      :Align {<CR>
+map <leader>n :call RenameFile()<cr>
 
 " easier window navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 " easier buffer navigation
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
@@ -122,6 +129,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.hbs set ft=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
   autocmd BufRead,BufNewFile *.scss,*.scss.erb set filetype=scss.css
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
   " Auto resize splits, if vim is resized
   autocmd VimResized * wincmd =
 
@@ -178,17 +186,48 @@ Plugin 'mattn/emmet-vim'
 Plugin 'takac/vim-hardtime'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock' " adds ar and ir textobj
+Plugin 'thoughtbot/vim-rspec'
 
+function! OpenSpec()
+  let repl = substitute(substitute(expand('%'), '\.rb', '', ''), "lib/", "spec/", "")
+  let path = repl . '_spec.rb'
+  exec('tabe ' . path)
+endfunction
+
+function! RunLastFailure()
+  exec('!bundle exec rspec --next-failure')
+endfunction
+
+function! VsplitSpec()
+  let repl = substitute(substitute(substitute(expand('%'), '\.rb', '', ''), "lib/", "spec/", ""), "app/", "spec/", "")
+  let path = repl . '_spec.rb'
+  let folder = fnamemodify(path, ":p:h")
+  echom folder
+  silent exec('!mkdir -p ' . folder)
+  exec('vsplit ' . path)
+endfunction
+
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
 
 " Hardtime
 let g:hardtime_default_on = 1
 let g:hardtime_showmsg = 1
 
-
 " Ag setup for ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" rspec setup
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 call vundle#end()            " required
 filetype plugin indent on    " required
