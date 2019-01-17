@@ -160,7 +160,6 @@ Plugin 'sickill/vim-pasta'
 " Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'robertmeta/nofrils'
 " Plugin 'rust-lang/rust.vim'
-Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-commentary'
@@ -171,6 +170,7 @@ Plugin 'sheerun/vim-polyglot' " Syntax files
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
 Plugin 'romainl/vim-cool' " Turn off hlsearch when 'done'
+Plugin 'vim-scripts/Align'
 
 " Ag setup for ack
 if executable('ag')
