@@ -32,7 +32,9 @@ set spelllang=en_us " ]S + z=
 set rtp+=~/.fzf
 set rtp+=/usr/local/opt/fzf
 
+filetype on
 filetype plugin indent on
+filetype indent on
 
 let loaded_matchparen = 1 " Do not highlight matching parens
 
@@ -87,8 +89,9 @@ nmap <leader>l :setlocal number!<CR>:setlocal relativenumber!<CR>
 nmap <leader>o :set paste!<CR>
 nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
-nmap <leader>r i# frozen_string_literal: true<CR>
-nmap <leader>p irequire "pry"; binding.pry<CR>
+nmap <leader>rf i# frozen_string_literal: true<CR>
+nmap <leader>rp irequire "pry"; binding.pry<CR>
+nmap <leader>vh :HardTimeToggle<Cr>
 
 
 " easier window navigation
@@ -160,7 +163,7 @@ Plugin 'sickill/vim-pasta'
 " Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'robertmeta/nofrils'
 " Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'  " cs"' (change " to ')
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
@@ -171,6 +174,16 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
 Plugin 'romainl/vim-cool' " Turn off hlsearch when 'done'
 Plugin 'vim-scripts/Align'
+Plugin 'mattn/emmet-vim'
+Plugin 'takac/vim-hardtime'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock' " adds ar and ir textobj
+
+
+" Hardtime
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+
 
 " Ag setup for ack
 if executable('ag')
@@ -180,9 +193,6 @@ endif
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" setup for vim-cool
-let g:CoolTotalMatches = 1
-
 colorscheme nofrils-dark
-
+  let g:CoolTotalMatches = 1
 
